@@ -2,7 +2,7 @@ var fs = require('fs'),
   path = require('path'),
   models_path = path.join(__dirname, '../models'),
   reg = new RegExp('.js$', 'i'),
-  dbURI = 'mongodb://localhost/dashboard_db'
+  dbURI = 'mongodb://localhost/questions_db'
 
 mongoose.connect(dbURI)
 mongoose.connection.on('connected', function () {

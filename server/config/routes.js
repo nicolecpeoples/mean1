@@ -1,7 +1,6 @@
-var users = require('../controllers/users.server.controller.js')
-var topics = require('../controllers/topics.server.controller.js')
-var messages  = require('../controllers/messages.server.controller.js')
-var comments = require('../controllers/comments.server.controller.js')
+var users = require('../controllers/users_server_controller.js')
+var questions = require('../controllers/questions_server_controller.js')
+var answers  = require('../controllers/answers_server_controller.js')
 
 module.exports = function (app) {
 //users controller
@@ -10,14 +9,14 @@ module.exports = function (app) {
 
   app.get('/logout', users.logout),
 
-//topics controller
-  app.get('/topics', topics.index),
-  app.post('/topics', topics.create),
+//questions controller
+  app.get('/questions', questions.index),
+  app.post('/questions', questions.create),
+  app.get('/questions/:id', questions.show),
 
-  // app.get('/session', users.session),
-  // app.get('/messages', messages.index),
-  // app.post('/messages', messages.create),
-  // app.get('/comments', comments.index),
-  app.post('/comment', comments.create)
+//answers controller
+  app.get('/answers/:id', answers.show),
+  app.post('/answers', answers.create)
+  
 
 }

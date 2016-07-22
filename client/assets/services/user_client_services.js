@@ -28,7 +28,6 @@
 
 		
 		factory.create = function(params, callback){
-			console.log(params);
 			$http.post('/users', params).then(function(res){
 				console.log(res, "in user factory");
 				if (res.status) {
@@ -53,7 +52,6 @@
 		}
 		
 		factory.getSessionUser = function(callback){
-			console.log('is this where my error is? ')
 			getSession(callback);
 		}
 

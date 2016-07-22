@@ -1,0 +1,14 @@
+<div ng-include src="'views/header.html'"></div>
+	<div ng-controller="showQuestionsAnswersController as SC">
+		{{SC.question}}
+		<h2 > {{ SC.question.question }} </h2>
+		<h4> {{ SC.question.description }} </h4>
+		
+			<div class="answer" ng-repeat="answer as SC.question._answers">
+			<p>{{answer.answer}}</p>
+			<p>{{question.answer}}</p>
+			<p>{{question.details}}</p>
+			<button ng-click="SC.like()"> Like </button>
+			</div>
+
+	</div>
