@@ -1,0 +1,35 @@
+<div ng-include src="'views/header.html'"></div>
+<div ng-controller="topicsController as TC">
+	<form>
+		<input type ="text">
+		<input type="submit" value="Search" ng-click="">
+	</form>
+	<table class="table">
+		<thead>
+			<tr>
+				<th> Category</th>
+				<th> Topic </th>
+				<th> User Name </th>
+				<th> Posts </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="topic in TC.topics">
+				<td ng-bind="TC.topic.category"> {{TC.topic.category[0]}}</td>
+				{{TC.topics}}
+				{{TC.topic.topic}}
+			</tr>
+		</tbody>
+	</table>.topic
+
+</div>
+<div ng-controller="topicsController as TC">
+	<h3> Add a new topic </h3>
+	<form>
+		<p> Topic: <input type ="text" ng-model="TC.newTopic.topic"> </p>
+		<p> Description: <textarea ng-model="TC.newTopic.description"></textarea></p>
+		<p> Category: <textarea ng-model="TC.newTopic.category"></textarea></p>
+		<input type="submit" value="Post" ng-click="TC.create()">
+	</form>
+
+
